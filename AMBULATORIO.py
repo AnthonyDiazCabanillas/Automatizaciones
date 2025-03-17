@@ -43,6 +43,7 @@ try:
     ACE_BTN=driver.find_element(By.ID,"IdReaperturarAtencion")
     ACE_BTN.click() 
     time.sleep(3.0)    
+    #COMO SE VA A REABRIR UNA CITA NO ES NECESARIO ESTA LINEA YA QUE BUSCA LA OPCION SOLO CUANDO ESTA ABIERTA
     #WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH,"/html/body/form/div[4]/div[1]/div/div[9]/div/div/table/tbody/tr/td[9]/a/img")))
     #HC=driver.find_element(By.XPATH,"/html/body/form/div[4]/div[1]/div/div[9]/div/div/table/tbody/tr/td[9]/a/img")
     #HC.click()
