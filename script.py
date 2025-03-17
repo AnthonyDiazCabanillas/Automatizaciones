@@ -22,7 +22,7 @@ try:
     usuario.send_keys("74847349")
     password.send_keys("Tonydc1502%")
     BtnIniSes.click()
-    time.sleep(5.0)
+    time.sleep(10000.0)
 
 
 finally:
