@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.action_chains import ActionChains
 import time
 
 # Configuración del WebDriver para Edge
@@ -64,7 +65,7 @@ try:
     time.sleep(3.0)
     SEL_OPC =driver.find_element(By.CSS_SELECTOR,"#ContentPlaceHolder1_Buscador_ProcedimientoMedico_gvBusqueda > tbody > tr:nth-child(1) > td:nth-child(5)")
     SEL_OPC.click()
-    time.sleep(2.0)
+    time.sleep(3.0)
     REL_DES=driver.find_element(By.ID,"ContentPlaceHolder1_txtRelato")
     REL_DES.click()
     time.sleep(1.0)                    
@@ -72,8 +73,7 @@ try:
     time.sleep(2.0)
     BTN_IMG=driver.find_element(By.XPATH,"/html/body/form/div[4]/table/tbody/tr[2]/td[1]/table/tbody/tr[1]/td/div/div[7]/div/div[1]/div[1]/div/div[2]/div[4]/div[1]/div[2]/div/input")
     BTN_IMG.click()
-    time.sleep(3.0)
-    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH,"/html/body/form/div[4]/table/tbody/tr[2]/td[1]/table/tbody/tr[1]/td/div/div[7]/div/div[1]/div[1]/div/div[2]/div[4]/div[5]/div/input[2]")))          
+    time.sleep(3.0)         
     GUA_PRO=driver.find_element(By.XPATH,"/html/body/form/div[4]/table/tbody/tr[2]/td[1]/table/tbody/tr[1]/td/div/div[7]/div/div[1]/div[1]/div/div[2]/div[4]/div[5]/div/input[2]")
     GUA_PRO.click()
     time.sleep(2.0)
@@ -85,7 +85,9 @@ try:
     FEC_CIT=driver.find_element(By.ID,"txtFechaProxCita_")
     FEC_CIT.send_keys("20/03/2025")
     time.sleep(3.0)
- 
+    #DARLE CLICK EN CUALQUIER PARTE
+
+    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH,"/html/body/div[3]/footer/input")))
     BTN_ACE=driver.find_element(By.XPATH,"/html/body/div[3]/footer/input")
     BTN_ACE.click()
     BTN_ACE_2=driver.find_element(By.XPATH,"/html/body/div[3]/footer/div/div/input[1]")
