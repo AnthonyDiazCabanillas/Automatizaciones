@@ -86,7 +86,8 @@ try:
     FEC_CIT.send_keys("20/03/2025")
     time.sleep(3.0)
     #DARLE CLICK EN CUALQUIER PARTE
-
+    actions = ActionChains(driver)
+    actions.move_by_offset(100, 200).click().perform()
     WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH,"/html/body/div[3]/footer/input")))
     BTN_ACE=driver.find_element(By.XPATH,"/html/body/div[3]/footer/input")
     BTN_ACE.click()
